@@ -42,6 +42,7 @@ RUN \
 	kmod \
 	net-tools \
 	qt5-qtbase \
+	ts
 	unrar && \
  echo "**** compile libtorrent rasterbar ****" && \
  git clone https://github.com/arvidn/libtorrent.git /tmp/libtorrent && \
