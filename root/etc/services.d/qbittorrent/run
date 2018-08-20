@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-UMASK_SET=${UMASK_SET:-022}
+UMASK_SET=${UMASK_SET:-000}
 WEBUI_PORT=${WEBUI_PORT:-8990}
 
 umask "$UMASK_SET"
