@@ -81,8 +81,8 @@ RUN \
 
 # add local files
 COPY root/ /
-COPY openvpn/ /etc/openvpn/
-COPY qbittorrent/ /etc/qbittorrent/
+ADD openvpn/ /etc/openvpn/
+ADD qbittorrent/ /etc/qbittorrent/
 
 
 RUN chmod +x /etc/qbittorrent/*.sh /etc/qbittorrent/*.init /etc/openvpn/*.sh
