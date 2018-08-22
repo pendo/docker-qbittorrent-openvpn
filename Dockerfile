@@ -15,9 +15,9 @@ VOLUME /downloads
 VOLUME /config
 
 # environment settings
-ENV HOME="/config" \
-XDG_CONFIG_HOME="/config" \
-XDG_DATA_HOME="/config"
+#ENV HOME="/config" \
+#XDG_CONFIG_HOME="/config" \
+#SXDG_DATA_HOME="/config"
 
 
 RUN \
