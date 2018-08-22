@@ -89,8 +89,6 @@ RUN \
 COPY root/ /
 ADD openvpn/ /etc/openvpn/
 ADD qbittorrent/ /etc/qbittorrent/
-ADD openvpn/openvpn.ovpn /config/openvpn/
-ADD openvpn/credentials.conf /config/openvpn/
 
 
 RUN chmod +x /etc/qbittorrent/*.sh /etc/qbittorrent/qbittorrent.init /etc/openvpn/*.sh

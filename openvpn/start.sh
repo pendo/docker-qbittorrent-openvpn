@@ -20,10 +20,10 @@ fi
 
 if [[ $VPN_ENABLED == "yes" ]]; then
 	# create directory to store openvpn config files
-	# mkdir -p /config/openvpn
+	mkdir -p /config/openvpn
 	#copy ovpn and credentials
-	#cp /etc/openvpn/openvpn.ovpn /config/openvpn/openvpn.ovpn
-	#cp /etc/openvpn/credentials.conf /config/openvpn/credentials.conf
+	cp /etc/openvpn/openvpn.ovpn /config/openvpn/openvpn.ovpn
+	cp /etc/openvpn/credentials.conf /config/openvpn/credentials.conf
 	#set perms and owner for files in /config/openvpn directory
 	set +e
 	chown -R "${PUID}":"${PGID}" "/config/openvpn" &> /dev/null
