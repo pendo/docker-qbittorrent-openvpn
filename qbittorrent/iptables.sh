@@ -113,7 +113,7 @@ for lan_network_item in "${lan_network_list[@]}"; do
 	lan_network_item=$(echo "${lan_network_item}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
 
 	# accept input to qbittorrent daemon port - used for lan access
-	iptables -A INPUT -i eth0 -s "${lan_network_item}" -p tcp --dport 8999 -j ACCEPT
+	iptables -A INPUT -i eth0 -s "${lan_network_item}" -p tcp --dport 6881 -j ACCEPT
 
 done
 
@@ -161,7 +161,7 @@ for lan_network_item in "${lan_network_list[@]}"; do
 	lan_network_item=$(echo "${lan_network_item}" | sed -e 's~^[ \t]*~~;s~[ \t]*$~~')
 
 	# accept output to deluge daemon port - used for lan access
-	iptables -A OUTPUT -o eth0 -d "${lan_network_item}" -p tcp --sport 8999 -j ACCEPT
+	iptables -A OUTPUT -o eth0 -d "${lan_network_item}" -p tcp --sport 6881 -j ACCEPT
 
 done
 

@@ -41,6 +41,7 @@ RUN \
 	geoip \
 	kmod \
 	net-tools \
+	openvpn \
 	qt5-qtbase \
 	unrar && \
  echo "**** compile libtorrent rasterbar ****" && \
