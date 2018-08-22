@@ -86,7 +86,7 @@ ADD openvpn/ /etc/openvpn/
 ADD qbittorrent/ /etc/qbittorrent/
 
 
-RUN chmod +x /etc/qbittorrent/*.sh /etc/qbittorrent/*.init /etc/openvpn/*.sh
+RUN chmod +x /etc/qbittorrent/*.sh /etc/qbittorrent/qbittorrent.init /etc/openvpn/*.sh
 
 
 # Expose ports, volumes and run
