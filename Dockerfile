@@ -10,10 +10,15 @@ LABEL maintainer="sparklyballs"
 ARG QBITTORRENT_VER="4.1.2"
 ARG RASTERBAR_VER="1.1.9"
 
+# add external volumes
+VOLUME /downloads
+VOLUME /config
+
 # environment settings
 ENV HOME="/config" \
 XDG_CONFIG_HOME="/config" \
 XDG_DATA_HOME="/config"
+
 
 RUN \
  echo "**** install build packages ****" && \
@@ -84,6 +89,8 @@ RUN \
 COPY root/ /
 ADD openvpn/ /etc/openvpn/
 ADD qbittorrent/ /etc/qbittorrent/
+ADD openvpn/openvpn.ovpn /config/openvpn/
+ADD openvpn/credentials.conf /config/openvpn/
 
 
 RUN chmod +x /etc/qbittorrent/*.sh /etc/qbittorrent/qbittorrent.init /etc/openvpn/*.sh
@@ -91,6 +98,5 @@ RUN chmod +x /etc/qbittorrent/*.sh /etc/qbittorrent/qbittorrent.init /etc/openvp
 
 # Expose ports, volumes and run
 EXPOSE 6881 6881/udp 8990
-VOLUME /config /downloads
 CMD ["/bin/bash", "/etc/openvpn/start.sh"]
 
